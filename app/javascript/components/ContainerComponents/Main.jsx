@@ -92,7 +92,7 @@ const TodosContainer = ({ data }) => {
 	};
 
 	return (
-		<div>
+		<main>
 			<div className="inputContainer">
 				<input
 					className="taskInput"
@@ -106,10 +106,10 @@ const TodosContainer = ({ data }) => {
 			</div>
 			<div>
 				<div style={{ margin: '10px 0' }}>
-					<i className="fa-solid fa-square-check" />: {data.filter((todo) => todo.done).length} Completed
+					<i className="fa-solid fa-square-check" />: {todos.filter((todo) => todo.done).length} Completed
 				</div>
 				<div style={{ margin: '10px 0' }}>
-					<i className="fa-solid fa-square" />: {data.filter((todo) => !todo.done).length} Incomplete
+					<i className="fa-solid fa-square" />: {todos.filter((todo) => !todo.done).length} Incomplete
 				</div>
 			</div>
 			<div className="listWrapper">
@@ -135,7 +135,7 @@ const TodosContainer = ({ data }) => {
 					updateTodoForm={updateTodoForm}
 				/>
 			</div>
-		</div>
+		</main>
 	);
 };
 
