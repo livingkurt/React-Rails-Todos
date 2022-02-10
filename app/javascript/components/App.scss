@@ -1,0 +1,176 @@
+ul.taskList {
+	padding: 0;
+}
+
+li.task {
+	list-style-type: none;
+	font-family: Tahoma;
+	font-size: 1.2em;
+	padding: 15px 0;
+	border-bottom: 1px solid #ccc;
+}
+
+li.task:hover .deleteTaskBtn {
+	visibility: visible;
+	opacity: 1;
+}
+
+input.taskCheckbox {
+	position: relative;
+	float: left;
+	margin-right: 10px;
+	-webkit-appearance: none;
+	width: 20px;
+	height: 20px;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	outline: none;
+	margin-left: 5px;
+	text-align: center;
+	cursor: pointer;
+	font-weight: bold;
+}
+
+input.taskCheckbox:checked:after {
+	color: green;
+	content: "\2713";
+	display: block;
+	font-size: 17px;
+	height: 17px;
+	position: absolute;
+	width: 17px;
+	left: 0.5px;
+	bottom: 2px;
+}
+
+input.taskCheckbox + label.taskLabel {
+	color: black;
+}
+
+input.taskCheckbox:checked + label.taskLabel {
+	text-decoration: line-through;
+	color: #656565;
+}
+
+input[placeholder] {
+	font-size: 1.1em;
+}
+
+body {
+	font-size: 16px;
+}
+
+.container {
+	background-color: #4d4f95;
+	padding: 20px;
+	color: white;
+	width: 40%;
+	height: 400px;
+	position: relative;
+	margin: 0 auto;
+	border-radius: 5px;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, .2), 0 6px 20px 0 rgba(0, 0, 0, .19);
+	/* box-shadow:
+    0 2.8px 2.2px rgba(0, 0, 0, 0.034),
+    0 6.7px 5.3px rgba(0, 0, 0, 0.048),
+    0 12.5px 10px rgba(0, 0, 0, 0.06),
+    0 22.3px 17.9px rgba(0, 0, 0, 0.072),
+    0 41.8px 33.4px rgba(0, 0, 0, 0.086),
+    0 100px 80px rgba(0, 0, 0, 0.12) */
+}
+
+.header {
+	padding: 5px;
+	text-align: center;
+	font-family: Tahoma, sans-serif;
+}
+
+.inputContainer {
+	padding: 15px 0;
+}
+
+.inputContainer .taskInput {
+	padding: 10px;
+	width: 100%;
+	border: 0;
+	box-shadow: 0px 0px 8px 0 rgb(0 0 0 / 20%), 0 6px 20px 0 rgb(0 0 0 / 19%);
+	border-radius: 10px;
+	box-sizing: border-box;
+}
+
+.listWrapper {
+	// position: absolute;
+	// bottom: 50px;
+	// top: 160px;
+	// right: 0;
+	// left: 0;
+	// overflow: auto;
+}
+
+.deleteTaskBtn {
+	float: right;
+	color: red;
+	background: rgba(0, 0, 0, 0);
+	font-size: 20px;
+	font-weight: bold;
+	border: 1px solid white;
+	border-radius: 50%;
+	padding: 10px 5px;
+	visibility: hidden;
+	opacity: 0;
+	line-height: 0;
+	margin-right: 5px;
+	cursor: default;
+}
+
+/* The Modal (background) */
+.modal {
+	display: none;
+	/* Hidden by default */
+	position: fixed;
+	/* Stay in place */
+	z-index: 1;
+	/* Sit on top */
+	left: 0;
+	top: 0;
+	width: 100%;
+	/* Full width */
+	height: 100%;
+	/* Full height */
+	overflow: auto;
+	/* Enable scroll if needed */
+	background-color: rgb(0, 0, 0);
+	/* Fallback color */
+	background-color: rgba(0, 0, 0, 0.8);
+	/* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+	display: flex;
+	// background: linear-gradient(180deg, #8a8a8a 0%, #272727 100%);
+	border-radius: 10px;
+	// background-color: #272727;
+	margin: 30% auto;
+	/* 15% from the top and centered */
+	padding: 20px;
+	// border: 1px solid #888;
+	width: 100%;
+	/* Could be more or less, depending on screen size */
+	max-width: 800px;
+}
+
+/* The Close Button */
+.close {
+	color: #aaa;
+	float: right;
+	font-size: 28px;
+	font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+	color: black;
+	text-decoration: none;
+	cursor: pointer;
+}

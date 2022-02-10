@@ -1,16 +1,12 @@
 import React from 'react';
-import './App.css';
-
-import TodosContainer from './TodoContainer';
+import './App.scss';
+import { Header, TodosContainer } from './components';
 
 const App = ({ todos }) => {
-	console.log({ todos });
 	return (
 		<div className="container">
-			<div className="header">
-				<h1>Todo List</h1>
-			</div>
-			<TodosContainer tds={todos} />
+			<Header data={todos} />
+			<TodosContainer data={todos} />
 		</div>
 	);
 };
