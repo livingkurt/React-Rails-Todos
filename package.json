@@ -1,5 +1,5 @@
 {
-  "name": "test-heroku-app",
+  "name": "React-Rails-Todos",
   "private": true,
   "dependencies": {
     "@babel/preset-react": "^7.16.7",
