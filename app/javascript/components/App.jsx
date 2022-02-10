@@ -1,12 +1,16 @@
 import React from 'react';
 import './App.scss';
-import { Header, TodosContainer } from './components';
+import { Header, Main } from './ContainerComponents';
+import { useWindowDimensions } from './Hooks';
 
 const App = ({ todos }) => {
+	const { width } = useWindowDimensions();
 	return (
-		<div className="container">
-			<Header data={todos} />
-			<TodosContainer data={todos} />
+		<div style={{ margin: '20px', display: 'flex', justifyContent: 'center' }}>
+			<div className="container">
+				<Header data={todos} />
+				<Main data={todos} />
+			</div>
 		</div>
 	);
 };

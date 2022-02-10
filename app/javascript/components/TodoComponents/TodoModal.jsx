@@ -7,7 +7,7 @@ export default function TodoModal({ form_state, set_form_state, deleteTodo, upda
 				<span className="close" onClick={() => set_form_state(false)}>
 					&times;
 				</span>
-				<div style={{ display: 'flex' }}>
+				<div style={{ display: 'flex', flexDirection: 'column' }}>
 					<input
 						className=""
 						type="text"
@@ -21,16 +21,18 @@ export default function TodoModal({ form_state, set_form_state, deleteTodo, upda
 						onChange={(e) =>
 							set_form_state((form_state) => ({ ...form_state, description: e.target.value }))}
 					/>
+					<label htmlFor="checkbox ">Completed</label>
 					<input
 						className="taskCheckbox"
 						type="checkbox"
+						name="checkbox"
 						checked={form_state.done}
 						onChange={(e) => set_form_state((form_state) => ({ ...form_state, done: e.target.value }))}
 					/>
 					<span className="deleteTaskBtn" onClick={(e) => deleteTodo(form_state.id)}>
 						Delete
 					</span>
-					<button onClick={updateTodoForm}>Submit</button>
+					<button onClick={() => updateTodoForm(form_state.id)}>Submit</button>
 				</div>
 			</div>
 		</div>

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import update from 'immutability-helper';
-import { TodoItem, TodoModal } from './';
+import { TodoItem, TodoModal } from '../TodoComponents';
 import { API } from '../../utils';
 
 const TodosContainer = ({ data }) => {
@@ -8,13 +8,18 @@ const TodosContainer = ({ data }) => {
 	const [ form_state, set_form_state ] = useState(false);
 	const [ input_value, set_input_value ] = useState('');
 
-	// const getTodos = () => {
-	// 	axios
-	// 		.get('/api/v1/todos')
-	// 		.then((response) => {
-	// 			set_todos(response.data);
-	// 		})
-	// 		.catch((error) => console.log(error));
+	// const getTodos = async () => {
+	// 	try {
+	// 		const { data } = await API.getTodos();
+	// 		const fresh_todos = update(todos, {
+	// 			$splice: [ [ 0, 0, data ] ]
+	// 		});
+
+	// 		set_todos(fresh_todos);
+	// 		set_input_value('');
+	// 	} catch (error) {
+	// 		console.log(error);
+	// 	}
 	// };
 
 	// useEffect(() => {
@@ -56,7 +61,7 @@ const TodosContainer = ({ data }) => {
 		}
 	};
 
-	const updateTodoForm = async () => {
+	const updateTodoForm = async (id) => {
 		try {
 			const { data } = await API.updateTodoForm(id, { todo: form_state });
 			const todoIndex = todos.findIndex((x) => x.id === data.id);
@@ -101,10 +106,10 @@ const TodosContainer = ({ data }) => {
 			</div>
 			<div>
 				<div style={{ margin: '10px 0' }}>
-					<i class="fa-solid fa-square-check" />: {data.filter((todo) => todo.done).length} Completed
+					<i className="fa-solid fa-square-check" />: {data.filter((todo) => todo.done).length} Completed
 				</div>
 				<div style={{ margin: '10px 0' }}>
-					<i class="fa-solid fa-square" />: {data.filter((todo) => !todo.done).length} Incomplete
+					<i className="fa-solid fa-square" />: {data.filter((todo) => !todo.done).length} Incomplete
 				</div>
 			</div>
 			<div className="listWrapper">
