@@ -15,7 +15,6 @@ class CategoriesTest < ApplicationSystemTestCase
     click_on "New Category"
 
     fill_in "Name", with: @category.name
-    fill_in "Todo", with: @category.todo
     click_on "Create Category"
 
     assert_text "Category was successfully created"
@@ -27,7 +26,6 @@ class CategoriesTest < ApplicationSystemTestCase
     click_on "Edit", match: :first
 
     fill_in "Name", with: @category.name
-    fill_in "Todo", with: @category.todo
     click_on "Update Category"
 
     assert_text "Category was successfully updated"
