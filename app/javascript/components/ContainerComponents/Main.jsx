@@ -129,7 +129,7 @@ const TodosContainer = ({ data }) => {
 						})}
 				</ul> */}
 				<DragnDrop
-					data={todos}
+					todos={todos}
 					updateTodo={updateTodo}
 					deleteTodo={deleteTodo}
 					set_form_state={set_form_state}
