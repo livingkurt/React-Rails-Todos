@@ -2,7 +2,7 @@ class TodosController < ApplicationController
   skip_forgery_protection
 
   def index
-    @todos = Todo.all.order("created_at DESC")
+    @todos = Todo.all.order(order: :asc)
   end
 
   def uncompleted
@@ -23,6 +23,12 @@ class TodosController < ApplicationController
     todo.update!(todo_param)
     render json: todo
   end
+  
+  def update_order
+    todo = Todo.find(params[:id])
+    todo.update!(todo_param)
+    render json: todo
+  end
 
   def update_form
     todo = Todo.find(params[:id])
@@ -38,7 +44,7 @@ class TodosController < ApplicationController
 
   private
     def todo_param
-      params.require(:todo).permit(:title, :description, :done)
+      params.require(:todo).permit(:title, :description, :order, :done)
     end
 end
 

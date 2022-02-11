@@ -13,6 +13,9 @@ const routes = {
 	updateTodo: (id, todo) => {
 		return axios.put(`/api/v1/todos/${id}`, todo);
 	},
+	updateOrder: (id, order) => {
+		return axios.put(`/api/v1/todos/${id}/update_order`, order);
+	},
 	updateTodoForm: (id, todo) => {
 		return axios.put(`/api/v1/todos/${id}/update_form`, todo);
 	},

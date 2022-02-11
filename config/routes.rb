@@ -6,6 +6,7 @@ Rails.application.routes.draw do
       member do
         get :uncompleted
         put :update_form
+        put :update_order
       end
     end
   end

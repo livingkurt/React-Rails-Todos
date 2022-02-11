@@ -2,22 +2,23 @@ ul.taskList {
 	padding: 0;
 }
 
-li.task {
+.task {
 	list-style-type: none;
-	font-family: Tahoma;
 	font-size: 1.2em;
 	padding: 15px 0;
 	border-bottom: 1px solid #ccc;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
 }
 
-li.task:hover .deleteTaskBtn {
+.task:hover {
 	visibility: visible;
 	opacity: 1;
 }
 
 input.taskCheckbox {
 	position: relative;
-	float: left;
 	margin-right: 10px;
 	-webkit-appearance: none;
 	width: 20px;
@@ -59,6 +60,7 @@ input[placeholder] {
 body {
 	font-size: 16px;
 	margin: 0px;
+	font-family: 'Quicksand', sans-serif;
 }
 
 textarea:focus,
@@ -84,6 +86,14 @@ button {
 	border-radius: 10px;
 	box-sizing: border-box;
 }
+
+// h1,
+// h2,
+// h3,
+// h4,
+// h5 {
+// 	font-family: 'Quicksand', sans-serif;
+// }
 
 .container {
 	background-color: #4d4f95;
@@ -124,19 +134,18 @@ button {
 }
 
 .deleteTaskBtn {
-	float: right;
-	color: red;
-	background: rgba(0, 0, 0, 0);
+	color: rgb(255, 255, 255);
+	// background: rgba(0, 0, 0, 0);
 	font-size: 20px;
 	font-weight: bold;
-	border: 1px solid white;
+	// border: 1px solid white;
 	border-radius: 50%;
 	padding: 10px 5px;
-	visibility: hidden;
-	opacity: 0;
+	// visibility: hidden;
+	// opacity: 0;
 	line-height: 0;
 	margin-right: 5px;
-	cursor: default;
+	cursor: pointer;
 }
 
 /* The Modal (background) */
@@ -169,7 +178,6 @@ button {
 /* The Close Button */
 .close {
 	color: #aaa;
-	float: right;
 	font-size: 28px;
 	font-weight: bold;
 }

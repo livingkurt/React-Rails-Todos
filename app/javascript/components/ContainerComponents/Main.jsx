@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import update from 'immutability-helper';
 import { TodoItem, TodoModal } from '../TodoComponents';
 import { API } from '../../utils';
+import { DragnDrop } from '.';
 
 const TodosContainer = ({ data }) => {
 	const [ todos, set_todos ] = useState(data);
@@ -113,7 +114,7 @@ const TodosContainer = ({ data }) => {
 				</div>
 			</div>
 			<div className="listWrapper">
-				<ul className="taskList">
+				{/* <ul className="taskList">
 					{todos &&
 						todos.map((todo, index) => {
 							return (
@@ -126,7 +127,14 @@ const TodosContainer = ({ data }) => {
 								/>
 							);
 						})}
-				</ul>
+				</ul> */}
+				<DragnDrop
+					data={todos}
+					updateTodo={updateTodo}
+					deleteTodo={deleteTodo}
+					set_form_state={set_form_state}
+					set_todos={set_todos}
+				/>
 
 				<TodoModal
 					form_state={form_state}
