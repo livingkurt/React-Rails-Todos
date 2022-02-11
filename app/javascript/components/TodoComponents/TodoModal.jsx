@@ -4,6 +4,9 @@ export default function TodoModal({ form_state, set_form_state, deleteTodo, upda
 	return (
 		<div id="myModal" className="modal" style={{ display: form_state ? 'block' : 'none' }}>
 			<div className="modal-content">
+				<span className="close" onClick={() => set_form_state(false)}>
+					&#10008;
+				</span>
 				<input
 					className=""
 					style={{ fontSize: '25px', boxShadow: 'unset ', fontWeight: 800, margin: '20px 0' }}

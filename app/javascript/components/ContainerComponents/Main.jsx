@@ -94,7 +94,7 @@ const TodosContainer = ({ data }) => {
 
 	return (
 		<main>
-			<div className="inputContainer">
+			<div className="inputContainer" style={{ padding: '0 20px' }}>
 				<input
 					className="taskInput"
 					type="text"
@@ -105,12 +105,12 @@ const TodosContainer = ({ data }) => {
 					onChange={handleChange}
 				/>
 			</div>
-			<div>
+			<div style={{ padding: '20px', marginLeft: '3px', fontSize: '22px' }}>
 				<div style={{ margin: '10px 0' }}>
-					<i className="fa-solid fa-square-check" />: {todos.filter((todo) => todo.done).length} Completed
+					<i className="fa-solid fa-square-check" /> {todos.filter((todo) => todo.done).length} Completed
 				</div>
 				<div style={{ margin: '10px 0' }}>
-					<i className="fa-solid fa-square" />: {todos.filter((todo) => !todo.done).length} Incomplete
+					<i className="fa-solid fa-square" /> {todos.filter((todo) => !todo.done).length} Incomplete
 				</div>
 			</div>
 			<div className="listWrapper">
