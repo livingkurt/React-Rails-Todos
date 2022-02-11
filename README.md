@@ -8,7 +8,7 @@
 
 # Inspiration
 
-What a better way to learn about a technology than to learn by creating a todo app. Making the todo app was fun deploying it to heroku was not. But I prevailed. Checkout the deploy here <a href="https://desolate-fortress-34751.herokuapp.com/" target="_blank">React Rails Todos</a>
+What a better way to learn about a technology than to learn by creating a todo app. Making the todo app was fun deploying it to heroku was not. But I prevailed. Checkout the deploy here <a href="https://todos-react-rails.herokuapp.com/" target="_blank">React Rails Todos</a>
 
 
 # Features
