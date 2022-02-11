@@ -7,16 +7,26 @@ export default function TodoItem({ todo, updateTodo, deleteTodo, set_form_state 
 				<input
 					className="taskCheckbox"
 					type="checkbox"
-					checked={todo.done}
+					defaultChecked={todo.done}
 					onChange={(e) => updateTodo(e, todo.id)}
 				/>
-				<div onClick={() => set_form_state(todo)}>
-					<label className="taskLabel">{todo.title}</label>
+				<div className="taskLabel" onClick={() => set_form_state(todo)}>
+					<label style={{ cursor: 'pointer' }}>{todo.title}</label>
 				</div>
 			</div>
-			<span className="deleteTaskBtn" onClick={(e) => deleteTodo(todo.id)}>
-				&#10008;
-			</span>
+			<div
+				style={{
+					display: 'flex',
+					alignItems: 'center'
+				}}
+			>
+				<span className="drag_icon">
+					<i className="fa-solid fa-bars" />
+				</span>
+				<span className="deleteTaskBtn" onClick={(e) => deleteTodo(todo.id)}>
+					&#10008;
+				</span>
+			</div>
 		</div>
 	);
 }

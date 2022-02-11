@@ -10,6 +10,7 @@ ul.taskList {
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
+	background-color: white;
 }
 
 .task:hover {
@@ -33,7 +34,7 @@ input.taskCheckbox {
 }
 
 input.taskCheckbox:checked:after {
-	color: green;
+	color: #4d4f95;
 	content: "\2713";
 	display: block;
 	font-size: 17px;
@@ -44,11 +45,11 @@ input.taskCheckbox:checked:after {
 	bottom: 2px;
 }
 
-input.taskCheckbox + label.taskLabel {
+input.taskCheckbox + .taskLabel {
 	color: black;
 }
 
-input.taskCheckbox:checked + label.taskLabel {
+input.taskCheckbox:checked + .taskLabel {
 	text-decoration: line-through;
 	color: #656565;
 }
@@ -76,6 +77,8 @@ textarea {
 	box-shadow: 0px 0px 8px 0 rgb(0 0 0 / 20%), 0 6px 20px 0 rgb(0 0 0 / 19%);
 	border-radius: 10px;
 	box-sizing: border-box;
+	font-size: 16px;
+	font-family: 'Quicksand', sans-serif;
 }
 
 button {
@@ -150,6 +153,19 @@ button {
 	line-height: 0;
 	margin-right: 5px;
 	cursor: pointer;
+}
+.drag_icon {
+	// background: rgba(0, 0, 0, 0);
+	font-size: 20px;
+	color: #4d4f95;
+	font-weight: bold;
+	// border: 1px solid white;
+	border-radius: 50%;
+	padding: 10px 5px;
+	// visibility: hidden;
+	// opacity: 0;
+	line-height: 0;
+	margin-right: 5px;
 }
 
 /* The Modal (background) */

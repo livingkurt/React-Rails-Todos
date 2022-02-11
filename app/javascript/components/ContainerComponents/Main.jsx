@@ -57,6 +57,7 @@ const TodosContainer = ({ data }) => {
 			});
 			set_todos(todos_updated);
 			set_input_value('');
+			set_form_state(false);
 		} catch (error) {
 			console.log(error);
 		}
@@ -86,6 +87,7 @@ const TodosContainer = ({ data }) => {
 					$splice: [ [ todoIndex, 1 ] ]
 				});
 				set_todos(todos_deleted);
+				set_form_state(false);
 			}
 		} catch (error) {
 			console.log(error);
@@ -114,20 +116,6 @@ const TodosContainer = ({ data }) => {
 				</div>
 			</div>
 			<div className="listWrapper">
-				{/* <ul className="taskList">
-					{todos &&
-						todos.map((todo, index) => {
-							return (
-								<TodoItem
-									todo={todo}
-									updateTodo={updateTodo}
-									deleteTodo={deleteTodo}
-									set_form_state={set_form_state}
-									key={index}
-								/>
-							);
-						})}
-				</ul> */}
 				<DragnDrop
 					todos={todos}
 					updateTodo={updateTodo}
@@ -135,7 +123,6 @@ const TodosContainer = ({ data }) => {
 					set_form_state={set_form_state}
 					set_todos={set_todos}
 				/>
-
 				<TodoModal
 					form_state={form_state}
 					set_form_state={set_form_state}

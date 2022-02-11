@@ -8,7 +8,6 @@ export default function DragnDrop({ todos, updateTodo, deleteTodo, set_form_stat
 	const [ loading_upload, set_loading_upload ] = useState(false);
 
 	function onDragEnd(result) {
-		console.log({ result });
 		if (!result.destination) {
 			return;
 		}

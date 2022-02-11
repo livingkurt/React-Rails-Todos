@@ -24,19 +24,23 @@ export default function TodoModal({ form_state, set_form_state, deleteTodo, upda
 						onChange={(e) =>
 							set_form_state((form_state) => ({ ...form_state, description: e.target.value }))}
 					/>
-					<div style={{ margin: '20px 0' }}>
-						<label htmlFor="checkbox ">Completed</label>
-						<input
-							className="taskCheckbox"
-							type="checkbox"
-							name="checkbox"
-							checked={form_state.done}
-							onChange={(e) => set_form_state((form_state) => ({ ...form_state, done: e.target.value }))}
-						/>
+					<div style={{ margin: '20px 0', display: 'flex', justifyContent: 'space-between' }}>
+						<div style={{ display: 'flex', alignItems: 'center' }}>
+							<label htmlFor="checkbox ">Completed</label>
+							<input
+								className="taskCheckbox"
+								type="checkbox"
+								name="checkbox"
+								checked={form_state.done}
+								onChange={(e) =>
+									set_form_state((form_state) => ({ ...form_state, done: e.target.checked }))}
+							/>
+						</div>
+						<span className="deleteTaskBtn" onClick={(e) => deleteTodo(form_state.id)}>
+							Delete
+						</span>
 					</div>
-					<span className="deleteTaskBtn" onClick={(e) => deleteTodo(form_state.id)}>
-						Delete
-					</span>
+
 					<button onClick={() => updateTodoForm(form_state.id)}>Submit</button>
 				</div>
 			</div>
